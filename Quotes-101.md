@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App - 01
+# React Tutorials - Quotes App - 101 ---> Getting Started
 
 ## Creating the Project Structure
 
@@ -42,8 +42,21 @@ function App() {
 export default App;
 ```
 
-Open `index.js` file and remove unused imports
+- Open `index.js` file and remove unused imports
+- Open `public\index.html`  file and replace its content with below code
 
+``` html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quotes App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
+```
 
 ### Run the application 
 
