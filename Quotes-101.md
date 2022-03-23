@@ -53,3 +53,11 @@ start the react application and validate if the project is running properly on t
     npm start
 ```
 
+## Setting our Dev Enviornment Right
+
+Install the below extenstions in VS Code to speed up your developement time
+
+- [Auto Import ](https://marketplace.visualstudio.com/items?itemName=NuclleaR.vscode-extension-auto-import)
+- [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- [HTML Format](https://marketplace.visualstudio.com/items?itemName=mohd-akram.vscode-html-format)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
