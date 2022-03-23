@@ -31,7 +31,7 @@ Open the `App.js` file
 - replace the return statement as shown below
 
 
-``` javascript
+``` javaScript
 
 function App() {
   return (
