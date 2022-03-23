@@ -10,7 +10,8 @@
     npx create-react-app quotes-app
  ```
 
-### Clean up
+
+ ### Clean up
 
 Remove all the files that are not required 
 - logo.svg
@@ -28,6 +29,8 @@ Clear the contents of the following files
 Open the `App.js` file 
 - remove all the unused imports of the delete files
 - replace the return statement as shown below
+
+
 ``` Javascript
 
 function App() {
@@ -37,7 +40,6 @@ function App() {
 }
 
 export default App;
-
 ```
 
 Open `index.js` file and remove unused imports
