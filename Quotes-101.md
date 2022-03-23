@@ -11,7 +11,7 @@
  ```
 
 
- ### Clean up
+### Clean up
 
 Remove all the files that are not required 
 - logo.svg
