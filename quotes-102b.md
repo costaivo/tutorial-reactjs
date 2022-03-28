@@ -10,6 +10,8 @@ Initially we will implement all the functionality without actually connecting wi
 
 - Assign the values to a const variable **authors** in the `AuthorPage.jsx`
 - Write a map function in the return statement to render the author names as a list
+
+
 ``` typescript
 
 function AuthorPage() {
