@@ -1,2 +1,2 @@
-- [Getting Started](https://costaivo.com/tutorial-reactjs/Quotes-101)
-- [Quotes-102](https://costaivo.com/tutorial-reactjs/Quotes-102)
+- [Getting Started](https://costaivo.com/tutorial-reactjs/quotes-101)
+- [Quotes-102](https://costaivo.com/tutorial-reactjs/quotes-102)
