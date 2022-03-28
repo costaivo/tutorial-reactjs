@@ -80,12 +80,15 @@ function QuotePage() {
 export default QuotePage
 ```
 
+
 ## Home Page
 
 ### Quote of the day
 
 - create a variable **quoteOfDay** and set it to a quote value
 - write code to rendre the quote
+
+
 ``` javascript
 function HomePage() {
   const quoteOfDay = {
