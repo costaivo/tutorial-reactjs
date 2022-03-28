@@ -62,7 +62,6 @@ We will now add the Navigation Menu to the site using bootstrap **NavBar**
   - '/quote' --> Quote
   - '/author' --> Author
 
-<<<<<<< HEAD
 =======
 ## Adding Routes
 
