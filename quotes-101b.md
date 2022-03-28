@@ -62,16 +62,3 @@ We will now add the Navigation Menu to the site using bootstrap **NavBar**
   - '/quote' --> Quote
   - '/author' --> Author
 
-=======
-## Adding Routes
-
-### Adding the required packages
-
-React does not come with a built in routing mechanism like Angular. we need to install and additional npm package to enable routing.
-Install the `react-router-dom` package using command
-
-``` bash
-  npm install react-router-dom
-```
-
->>>>>>> cff2a2e21cb46b60b0a993c47844ff796815fa47
