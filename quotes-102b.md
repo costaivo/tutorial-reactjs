@@ -116,6 +116,7 @@ export default HomePage;
 
 Add a form to the QuotesPage to implement the search by Author functionality
 
+
 ``` javascript
    <form className="row m-3">
         <div className="input-group">
