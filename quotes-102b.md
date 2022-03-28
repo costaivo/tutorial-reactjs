@@ -43,6 +43,7 @@ export default AuthorPage
 ## Quotes Page
 
 ### Listing Quotes 
+
 - Navigate to the api endpoint and copy the response from the endpoint returned by the [Quote API](https://quote-api-app.herokuapp.com/quote)
 
 - Assign the values to a const variable **quotes** in the `QuotePage.jsx`
@@ -79,7 +80,7 @@ export default QuotePage
 
 ## Home Page
 
-## Quote of the day
+### Quote of the day
 
 - create a variable **quoteOfDay** and set it to a quote value
 - write code to rendre the quote
