@@ -117,7 +117,7 @@ using the below code snippet we can filter the quotes based on the author's name
 
 ## Implement Search functionality
 
-In this section we will start using **useState** hook. In order to maintain the data in a react application we need to use a store, useState provides us that feature. Whenever the value of the state variable changes, React will automatically render the componet. 
+In this section we will start using **useState** hook. In order to maintain the data in a react application we need to use a store, useState provides us that feature. Whenever the value of the state variable changes, React will automatically re-render the componet. 
 
 
 ``` javascript
