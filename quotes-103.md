@@ -156,12 +156,20 @@ const getFilteredQuotes=(author)=>{
   }
 ```
 
+Wrapper function to invoke getFilteredQuotes.
+``` javascript
+  const loadQuotes =()=>{
+    getFilteredQuotes(params.author)
+  }
+```
+
 ``` javascript
   const handleSubmit=(e)=>{
     e.preventDefault()
     getFilteredQuotes(searchAuthor)
   }
 ```
+
 
 ### using `useEffect` hook
 
