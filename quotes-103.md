@@ -5,7 +5,8 @@
 Open the **Quotes App** in the browser, and review all the error messages in the **Console** tab
 
 <span style='color:red'>
-Warning: Each child in a list should have a unique "key" prop.<br/>
+ Warning: Each child in a list should have a unique <strong>key</strong> prop.<br/>
+ 
 Check the render method of `AuthorPage`. See https://reactjs.org/link/warning-keys for more information.
 </span>
 
