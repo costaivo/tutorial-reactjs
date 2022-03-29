@@ -185,3 +185,4 @@ we need the **useEffect** hook to load the quotes on inital load of the QuotePag
 
 
 now the entire application is funcitally working. But it still needs to be hooked to pull the data from the api endpoints. we will work on implementing it next. 
+
