@@ -3,3 +3,5 @@
 - [Quotes-102 -- Add Routes](https://costaivo.com/tutorial-reactjs/quotes-102)
 - [Quotes-102b -- Listing Data](https://costaivo.com/tutorial-reactjs/quotes-102b)
 - [Quotes-103 -- Passing Data between Components](https://costaivo.com/tutorial-reactjs/quotes-103)
+- [Quotes-104 -- Connecting to API](https://costaivo.com/tutorial-reactjs/quotes-104)
+- [Quotes-104b -- Refactoring](https://costaivo.com/tutorial-reactjs/quotes-104b)
