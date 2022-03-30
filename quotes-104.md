@@ -75,7 +75,7 @@ To fix this we have to we can use custom logic or use **NavLink** component avai
 In the `App.js` file replace the **Link** element with **NavLink** and set the attribute *activeClassName** to the value of the class. that will keep the nav item active
 
 ``` html
- <NavLink className="nav-link" activeClassName="active" to='/'>Home</NavLink>
+ <NavLink className="nav-link"  to='/'>Home</NavLink>
 ```
 
 ## Implementing the logic to generate Random Quote of the Day
