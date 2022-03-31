@@ -74,3 +74,8 @@ Install the below extenstions in VS Code to speed up your developement time
 - [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [HTML Format](https://marketplace.visualstudio.com/items?itemName=mohd-akram.vscode-html-format)
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+
+[:arrow_left: Previous](https://github.com/costaivo/tutorial-reactjs)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[:1234: Index](https://github.com/costaivo/tutorial-reactjs) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[:arrow_right: Next](https://github.com/costaivo/tutorial-reactjs/blob/main/quotes-101b.md) 
