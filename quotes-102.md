@@ -56,4 +56,5 @@ Add the below code to add the routing logic for the application
 Click on the Navigation routes and check if the route paths work
 
 <hr/>
+
 [<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102) 
