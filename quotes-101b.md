@@ -63,6 +63,6 @@ We will now add the Navigation Menu to the site using bootstrap **NavBar**
   - '/author' --> Author
 
 
-[:arrow_left: Previous](https://github.com/costaivo/tutorial-reactjs/blob/main/quotes-101b.md)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[:1234: Index](https://github.com/costaivo/tutorial-reactjs) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[:arrow_right: Next](https://github.com/costaivo/tutorial-reactjs/blob/main/quotes-102.md) 
+[Previous](https://costaivo.com/tutorial-reactjs/quotes-101b)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[Index](https://costaivo.com/tutorial-reactjs) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[Next](https://costaivo.com/tutorial-reactjs/quotes-102) 
