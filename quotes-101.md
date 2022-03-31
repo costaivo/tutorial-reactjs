@@ -77,4 +77,4 @@ Install the below extenstions in VS Code to speed up your developement time
 
 <hr/>
 
-[Previous](https://costaivo.com/tutorial-reactjs)  [Index](https://costaivo.com/tutorial-reactjs) [Next](https://costaivo.com/tutorial-reactjs/quotes-101b) 
+[<< Previous](https://costaivo.com/tutorial-reactjs) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101b) 
