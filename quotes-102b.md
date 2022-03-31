@@ -148,3 +148,4 @@ authors.map(author=>(<p>
               <Link to='/quote'>{author}</Link>
               </p>))
 ```
+<hr/>
