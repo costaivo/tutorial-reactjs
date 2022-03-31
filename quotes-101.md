@@ -76,6 +76,6 @@ Install the below extenstions in VS Code to speed up your developement time
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 
-[Previous](https://github.com/costaivo/tutorial-reactjs)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[Previous](https://costaivo.com/tutorial-reactjs)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [Index](https://costaivo.com/tutorial-reactjs) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [Next](https://costaivo.com/tutorial-reactjs/quotes-101b) 
