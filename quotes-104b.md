@@ -120,5 +120,6 @@ function HomePage() {
 export default HomePage;
 
 ```
+<hr/>
 
 [<< Previous](https://costaivo.com/tutorial-reactjs/quotes-104) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-105) 
