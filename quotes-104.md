@@ -195,4 +195,6 @@ function Footer() {
 export default Footer;
 ```
 
+<hr/>
 
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-103) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-104b) 
