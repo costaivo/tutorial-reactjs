@@ -9,3 +9,4 @@
 - [Quotes-104b -- Custom Hooks](https://costaivo.com/tutorial-reactjs/quotes-104b)
 
 ## Part 2
+- [Quotes-105 -- Add Quotes](https://costaivo.com/tutorial-reactjs/quotes-105)
