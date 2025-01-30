@@ -159,4 +159,4 @@ Install the below extensions in VS Code to speed up your development time
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101b)
+  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101b)
