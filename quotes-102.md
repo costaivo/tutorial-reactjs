@@ -45,15 +45,16 @@ export default function NavbarDark() {
 
 #### Code Explanation
 
-This line imports the Link component from react-router-dom, which is used for navigation within the application without reloading the page.
-The NavbarDark function is a React functional component.
-It returns a JSX structure that represents a navigation bar (<nav> element) with Bootstrap classes for styling.
-The navbar-expand-lg class makes the navbar responsive, expanding on large screens.
-The navbar-dark bg-dark classes apply a dark theme to the navbar.
-Inside the navbar, there is a container (<div className="container-fluid">) that holds the content.
-The Link component is used to create a brand link that navigates to the home page ("/").
-A button is included to toggle the navigation menu on smaller screens. This button uses Bootstrap's collapse functionality with appropriate data-bs-* attributes and ARIA attributes for accessibility.
-This component sets up a responsive, dark-themed navigation bar that can be used across the application.
+- This line imports the Link component from react-router-dom, which is used for navigation within the application without reloading the page.
+
+- The NavbarDark function is a React functional component.
+- It returns a JSX structure that represents a navigation bar (<nav> element) with Bootstrap classes for styling.
+- The navbar-expand-lg class makes the navbar responsive, expanding on large screens.
+- The navbar-dark bg-dark classes apply a dark theme to the navbar.
+- Inside the navbar, there is a container (<div className="container-fluid">) that holds the content.
+- The Link component is used to create a brand link that navigates to the home page ("/").
+- A button is included to toggle the navigation menu on smaller screens. This button uses Bootstrap's - - - - - collapse functionality with appropriate data-bs-* attributes and ARIA attributes for accessibility.
+- This component sets up a responsive, dark-themed navigation bar that can be used across the application.
 
 Modify the `src/App.tsx` file to include the Navbar component:
 
@@ -64,6 +65,8 @@ Modify the `src/App.tsx` file to include the Navbar component:
           <!--- existing routes -->
         </Routes>
     </div>
+```
+
 ---
 
 [<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
