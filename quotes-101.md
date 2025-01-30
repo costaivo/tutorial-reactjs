@@ -120,6 +120,8 @@ export default defineConfig({
 });
 ```
 
+---
+
 ### Run the application
 
 start the react application and validate if the project is running properly on the default port 3000
@@ -127,6 +129,8 @@ start the react application and validate if the project is running properly on t
 ``` cmd
    pnpm dev
 ```
+
+---
 
 ## Setting  Dev Environment Right
 
