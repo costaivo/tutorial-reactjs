@@ -11,7 +11,7 @@ npm install
 npm install bootstrap axios
  ```
 
->> **or**
+**or**
 
 ``` cmd
 pnpm create vite@latest quotes-app --template react-ts
@@ -20,7 +20,7 @@ pnpm install
 pnpm add bootstrap axios @types/bootstrap
 ```
 
->> **or**
+**or**
 
 ``` cmd
 yarn create vite quotes-app --template react-ts
@@ -35,13 +35,13 @@ yarn add bootstrap axios
 npm run dev
   ```
 
->> **or**
+**or**
 
   ``` cmd
 pnpm dev
 ```
 
->> **or**
+**or**
 
 ``` cmd
 yarn dev
