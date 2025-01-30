@@ -11,7 +11,7 @@ npm install
 npm install bootstrap axios
  ```
 
-**or**
+*-----or-----*
 
 ``` cmd
 pnpm create vite@latest quotes-app --template react-ts
@@ -20,7 +20,7 @@ pnpm install
 pnpm add bootstrap axios @types/bootstrap
 ```
 
-**or**
+          **or**
 
 ``` cmd
 yarn create vite quotes-app --template react-ts
@@ -49,51 +49,76 @@ yarn dev
 
 ### Clean up
 
-Remove all the files that are not required
-
-- logo.svg
-- reportWebVitals.js
-- App.test.js
-- setupTests.js
-- public/logo*.png
-- public/manifest.json
-- public/robots.txt
-
 Clear the contents of the following files
 
 - App.css
 - index.css
+- App.tsx
+- main.tsx
 
-Open the `App.js` file
+### Modify code and test bootstrap installation 
 
-- remove all the unused imports of the delete files
-- replace the return statement as shown below
+Open the `App.tsx` file
+
 
 ``` typescript
-
 function App() {
   return (
-   <div>Quotes App</div>
+    <div className="container mt-5">
+      <button className="btn btn-primary">Hello World</button>
+    </div>
   );
 }
 
 export default App;
 ```
 
-- Open `index.js` file and remove unused imports
+- Open `main.tsx` file 
+
+``` typescript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
 - Open `public\index.html`  file and replace its content with below code
 
 ``` html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/quotes.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quotes App</title>
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+```
 
+- open `vite.config.ts` file and add the below code
+
+``` typescript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
+    host: '0.0.0.0'
+  }
+});
 ```
 
 ### Run the application
@@ -101,18 +126,18 @@ export default App;
 start the react application and validate if the project is running properly on the default port 3000
 
 ``` cmd
-    npm start
+   pnpm dev
 ```
 
-## Setting our Dev Enviornment Right
+## Setting  Dev Environment Right
 
-Install the below extenstions in VS Code to speed up your developement time
+Install the below extensions in VS Code to speed up your development time
 
 - [Auto Import](https://marketplace.visualstudio.com/items?itemName=NuclleaR.vscode-extension-auto-import)
 - [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [HTML Format](https://marketplace.visualstudio.com/items?itemName=mohd-akram.vscode-html-format)
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-<hr/>
+---
 
 [<< Previous](https://costaivo.com/tutorial-reactjs) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101b)
