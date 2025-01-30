@@ -104,6 +104,21 @@ This code sets up a router with three routes:
 
 Now, when you navigate to these paths in your browser, the corresponding components will be rendered.
 
+### Add Navigation Menu
+
+To add a navigation menu to your application.
+
+``` tsx
+    <div className='"navbar navbar-expand-lg navbar-light bg-light'>
+        <Link className="nav-link" to="/">Home</Link>
+        <Link className="nav-link" to="/quotes">Quotes</Link>
+        <Link className="nav-link" to="/authors">Author</Link>
+      </div>
+      <Routes>
+        <!--- existing routes -->
+        </Routes>
+```
+
 ---
 
 [<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)

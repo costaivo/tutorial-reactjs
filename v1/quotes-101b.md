@@ -3,6 +3,7 @@
 ## Add Bootstrap
 
 ### Adding bootstrap using CDN
+
 In this project we will add bootstrap CSS framework to the project using CDN
 Navigate to the site [Bootstrap Getting Started](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
@@ -37,9 +38,10 @@ Navigate to the site [Bootstrap Getting Started](https://getbootstrap.com/docs/5
   );
 }
  ```
- - Run the project, open the browser and validate if you see the bootstrap button is rendered 
 
- - On the browser, open the developers tools and click on the **Console** tab. Notice the error in the console. 
+- Run the project, open the browser and validate if you see the bootstrap button is rendered
+
+- On the browser, open the developers tools and click on the **Console** tab. Notice the error in the console.
 
 ``` console
 Warning: Invalid DOM property `class`. Did you mean `className`?
@@ -47,12 +49,14 @@ Warning: Invalid DOM property `class`. Did you mean `className`?
     at div
     at App
 ```
- - The above error occurs, since `class` name is a keyword in Javascript and JSX uses JavaScript, hence `class` word cannnot be used as an attribute in JSX HTML element definations. Instead you have to use `className`
 
- - Replace `class` with `className` and validate if the console error is gone
+- The above error occurs, since `class` name is a keyword in Javascript and JSX uses JavaScript, hence `class` word cannnot be used as an attribute in JSX HTML element definations. Instead you have to use `className`
+- Replace `class` with `className` and validate if the console error is gone
 
-## Adding Navigation Menu 
+## Adding Navigation Menu
+
 We will now add the Navigation Menu to the site using bootstrap **NavBar**
+
 - Copy the code snippet of the NavBar code example you prefer from the  [bootstrap Nav Examples](https://getbootstrap.com/docs/5.1/components/navbar/)
 
 - Paste the code inside the Root div element of the `App.js` file and replace `class` with `className`
@@ -62,5 +66,6 @@ We will now add the Navigation Menu to the site using bootstrap **NavBar**
   - '/quote' --> Quote
   - '/author' --> Author
 
-<hr/>
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102) 
+---
+
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
