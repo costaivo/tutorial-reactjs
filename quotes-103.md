@@ -1,5 +1,5 @@
 # React Tutorials - Quotes App - 103 --- > Passing Data between Components
-
+==old
 ## Fixing the Errors in console
 
 Open the **Quotes App** in the browser, and review all the error messages in the **Console** tab
