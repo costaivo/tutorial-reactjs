@@ -22,7 +22,7 @@ pnpm add bootstrap axios @types/bootstrap
 
 **or**
 
-``` cmd
+``` bash
 yarn create vite quotes-app --template react-ts
 cd quotes-app
 yarn
@@ -31,19 +31,19 @@ yarn add bootstrap axios
 
 ### Run the project
 
-``` cmd
+``` bash
 npm run dev
   ```
 
 **or**
 
-  ``` cmd
+  ``` basg
 pnpm dev
 ```
 
 **or**
 
-``` cmd
+``` bash
 yarn dev
 ```
 
