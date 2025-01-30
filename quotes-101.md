@@ -11,7 +11,7 @@ npm install
 npm install bootstrap axios
  ```
 
-*-----or-----*
+**or**
 
 ``` cmd
 pnpm create vite@latest quotes-app --template react-ts
@@ -20,7 +20,7 @@ pnpm install
 pnpm add bootstrap axios @types/bootstrap
 ```
 
-          **or**
+**or**
 
 ``` cmd
 yarn create vite quotes-app --template react-ts
@@ -56,10 +56,9 @@ Clear the contents of the following files
 - App.tsx
 - main.tsx
 
-### Modify code and test bootstrap installation 
+### Modify code and test bootstrap installation
 
 Open the `App.tsx` file
-
 
 ``` typescript
 function App() {
@@ -73,7 +72,7 @@ function App() {
 export default App;
 ```
 
-- Open `main.tsx` file 
+- Open `main.tsx` file
 
 ``` typescript
 import React from 'react';
