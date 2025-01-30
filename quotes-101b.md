@@ -1,66 +1,109 @@
 # React Tutorials - Quotes App - 101b --- > Setting up the Navigation
 
-## Add Bootstrap
+## Add Routes
 
-### Adding bootstrap using CDN
-In this project we will add bootstrap CSS framework to the project using CDN
-Navigate to the site [Bootstrap Getting Started](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+To set up navigation in your React application, you need to install `react-router-dom` which provides the necessary components and hooks for routing. The `@types/react-router-dom` package provides TypeScript definitions for `react-router-dom`.
 
-- Copy-Paste the CSS CDN link in the **Head** section of the HTML file `public/index.html`
-- Copy-Paste the JS CDN link in the **BODY** section of the HTML file `public/index.html`
-- The html file code should look like the one shown below
-
-``` html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Quotes App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
-</html>
+``` bash
+pnpm add react-router-dom @types/react-router-dom
 ```
 
-- test if boostrap components are rendering properly by adding a button in the `App.js` file
+Now create the page components:
+Add three page components:
 
-``` typescript
- function App() {
+- HomePage,
+- QuotePage,
+- and AuthorPage.
+
+### Create src/pages/HomePage.tsx:
+
+``` tsx
+
+export default function HomePage() {
   return (
-   <div>
-     <h1>Quotes App</h1>
-      <button type="button" class="btn btn-primary">Primary</button>
-   </div>
+    <div className="container mt-4">
+      <h1>Welcome to Quotes App</h1>
+      <p>Explore inspiring quotes from famous authors</p>
+    </div>
   );
 }
- ```
- - Run the project, open the browser and validate if you see the bootstrap button is rendered 
-
- - On the browser, open the developers tools and click on the **Console** tab. Notice the error in the console. 
-
-``` console
-Warning: Invalid DOM property `class`. Did you mean `className`?
-    at button
-    at div
-    at App
 ```
- - The above error occurs, since `class` name is a keyword in Javascript and JSX uses JavaScript, hence `class` word cannnot be used as an attribute in JSX HTML element definations. Instead you have to use `className`
 
- - Replace `class` with `className` and validate if the console error is gone
+### Create src/pages/QuotePage.tsx:
 
-## Adding Navigation Menu 
-We will now add the Navigation Menu to the site using bootstrap **NavBar**
-- Copy the code snippet of the NavBar code example you prefer from the  [bootstrap Nav Examples](https://getbootstrap.com/docs/5.1/components/navbar/)
+``` tsx
+export default function QuotePage() {
+  return (
+    <div className="container mt-4">
+      <h1>Random Quote</h1>
+      <div className="card mt-3">
+        <div className="card-body">
+          <blockquote className="blockquote mb-0">
+            <p>Quote content will appear here...</p>
+            <footer className="blockquote-footer mt-2">Author name</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
 
-- Paste the code inside the Root div element of the `App.js` file and replace `class` with `className`
+### Create src/pages/AuthorPage.tsx:
 
-- Add/remove routes corressponding to the Quotes app
-  - '/' --> Home
-  - '/quote' --> Quote
-  - '/author' --> Author
+```tsx
 
-<hr/>
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102) 
+export default function AuthorPage() {
+  return (
+    <div className="container mt-4">
+      <h1>Authors</h1>
+      <ul className="list-group mt-3">
+        <li className="list-group-item">Author 1</li>
+        <li className="list-group-item">Author 2</li>
+        <li className="list-group-item">Author 3</li>
+      </ul>
+    </div>
+  );
+}
+```
+
+### Add Routing Logic
+
+To add routing logic to your application, you need to set up a router in your `src/App.tsx` file. Import the necessary components from `react-router-dom` and define the routes for your pages.
+
+### Update src/App.tsx
+
+``` tsx
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import QuotePage from './pages/QuotePage';
+import AuthorPage from './pages/AuthorPage';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/quotes" element={<QuotePage />} />
+          <Route path="/authors" element={<AuthorPage />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+This code sets up a router with three routes:
+
+- `/` for the `HomePage` component
+- `/quote` for the `QuotePage` component
+- `/authors` for the `AuthorPage` component
+
+Now, when you navigate to these paths in your browser, the corresponding components will be rendered.
+
+---
+
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
