@@ -4,14 +4,24 @@
 
 ### Create react app using `vite`
 
- ``` cmd
+[Vite](https://vitejs.dev/) is a modern build tool that provides a faster and leaner development experience for modern web projects. It leverages native ES modules and provides a lightning-fast development server with Hot Module Replacement (HMR).
+
+### Using npm, pnpm, or yarn for building the project
+
+You can use different package managers to create and manage your project. Here are the commands for each:
+
+#### npm
+
+``` bash
 npm create vite@latest quotes-app --template react-ts
 cd quotes-app
 npm install
 npm install bootstrap axios
- ```
+```
 
-**or**
+**Advantage**: npm is the default package manager for Node.js and has a large ecosystem of packages.
+
+#### pnpm
 
 ``` cmd
 pnpm create vite@latest quotes-app --template react-ts
@@ -20,34 +30,40 @@ pnpm install
 pnpm add bootstrap axios @types/bootstrap
 ```
 
-**or**
+**Advantage**: pnpm uses a unique symlink approach to save disk space and boost installation speed.
+
+#### yarn
 
 ``` bash
-yarn create vite quotes-app --template react-ts
+yarn create vite@latest quotes-app --template react-ts
 cd quotes-app
 yarn
 yarn add bootstrap axios
 ```
 
+**Advantage**: yarn is known for its fast performance and reliability due to its efficient caching mechanism.
+
 ### Run the project
+
+#### run using npm
 
 ``` bash
 npm run dev
-  ```
+```
 
-**or**
+#### run using pnpm
 
-  ``` basg
+``` bash
 pnpm dev
 ```
 
-**or**
+#### run using yarn
 
 ``` bash
 yarn dev
 ```
 
-### Clean up
+### Clean up the project
 
 Clear the contents of the following files
 
