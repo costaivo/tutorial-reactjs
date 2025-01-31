@@ -69,4 +69,4 @@ Modify the `src/App.tsx` file to include the Navbar component:
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102b)
