@@ -2,76 +2,89 @@
 
 ## Author Page
 
-### Listing the Authors 
+### Listing the Authors
 
 ``` typescript
 
-function AuthorPage() {
-    const authors =[
-        "A. P. J. Abdul Kalam",
-        "Gandhi",
-        "Ivo Costa",
-        "Jakob",
-        "John Lennon",
-        "Lao-Tze",
-        "Larry Niven",
-        "Linnie",
-        "Martin Fowler",
-        "Michael Feathers",
-        "Michael Jordan",
-        "Nelson Mandela",
-        "Steve Jobs",
-      ]
-  return (
-    <div>
-        {
-            authors.map(author=>(<p>{author}</p>))
-        }
-    </div>
-  )
-}
+export default function AuthorPage() {
+  const authors = [
+    "A. P. J. Abdul Kalam",
+    "Gandhi",
+    "Ivo Costa",
+    "Jakob",
+    "John Lennon",
+    "Lao-Tze",
+    "Larry Niven",
+    "Linnie",
+    "Martin Fowler",
+    "Michael Feathers",
+    "Michael Jordan",
+    "Nelson Mandela",
+    "Steve Jobs",
+  ];
 
-export default AuthorPage
+  return (
+    <div className="container mt-4">
+      <h1>Authors</h1>
+      <ul className="list-group mt-3">
+        {authors.map((author, index) => (
+          <li className="list-group-item" key={index}>{author}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 ```
 
 ## Quotes Page
 
-### Listing Quotes 
-
-- Navigate to the api endpoint and copy the response from the endpoint returned by the [Quote API](https://quote-api-app.herokuapp.com/quote)
+### Listing Quotes
 
 - Assign the values to a const variable **quotes** in the `QuotePage.jsx`
 - Write a map function in the return statement to render the author names as a list
 
-``` javascript
-function QuotePage() {
-
+``` typescript
+export default function QuotePage() {
     const quotes = [
         {
-          "likes": 1,
-          "dislikes": 0,
-          "isActive": true,
-          "_id": "611ba4f0bf79660015b222fc",
-          "quote": "If you want to shine like a sun, first burn like a sun.",
-          "author": "A. P. J. Abdul Kalam",
-          "__v": 0
+            text: "Be the change you wish to see in the world.",
+            author: "Mahatma Gandhi"
         },
-      ]
-  return (
-    <div>
-    {quotes.map((quote)=>(
-        <div>
-            <h5>{quote.quote}</h5>  
-            <h6>{quote.author}</h6> 
-            <hr/>
+        {
+            text: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            author: "Albert Einstein"
+        },
+        {
+            text: "In three words I can sum up everything I've learned about life: it goes on.",
+            author: "Robert Frost"
+        },
+        {
+            text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+            author: "Ralph Waldo Emerson"
+        },
+        {
+            text: "The only way to do great work is to love what you do.",
+            author: "Steve Jobs"
+        }
+    ];
+
+    return (
+        <div className="container mt-4">
+            <h1>All Quotes</h1>
+            {quotes.map((quote, index) => (
+                <div className="card mt-3" key={index}>
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                            <p>{quote.text}</p>
+                            <footer className="blockquote-footer mt-2">{quote.author}</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            ))}
         </div>
-    ))}</div>
-  )
+    );
 }
-
-export default QuotePage
 ```
-
 
 ## Home Page
 
@@ -80,9 +93,9 @@ export default QuotePage
 - create a variable **quoteOfDay** and set it to a quote value
 - write code to rendre the quote
 
+``` typescript
 
-``` javascript
-function HomePage() {
+export default function HomePage() {
   const quoteOfDay = {
     likes: 1,
     dislikes: 0,
@@ -93,29 +106,29 @@ function HomePage() {
     __v: 0,
   };
   return (
-    <div>
-      <h1> Quote of the Day</h1>
-      <div>
-        <h5>{quoteOfDay.quote}</h5>
-        <h6>{quoteOfDay.author}</h6>
-        <hr />
+      <div className="container mt-4">
+        <h1>Quotes App</h1>
+        <p><strong>Explore inspiring quotes from famous authors</strong></p>
+        <hr></hr>
+        <p> <h3 className="text-primary"> Quote of the Day </h3></p>
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{quoteOfDay.quote}</h5>
+            <p className="card-text">Author: {quoteOfDay.author}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  );
-}
-
-export default HomePage;
-
+    );
+  }
 ```
 
-##  Revisit  -> Quotes page & Author page
+## Revisit  -> Quotes page & Author page
 
 ### Add the form to search for quote based on Author
 
 Add a form to the QuotesPage to implement the search by Author functionality
 
-
-``` javascript
+``` typescript
    <form className="row m-3">
         <div className="input-group">
           <span className="input-group-text" id="basic-addon1">
@@ -135,12 +148,12 @@ Modify the code in the Author page to include a hyperlink to take the user to th
 For this we need to use the **Link** element from `react-router-dom`
 Modify the code to look as shown below
 
-``` javascript 
+``` typescript
 authors.map(author=>(<p>
               <Link to='/quote'>{author}</Link>
               </p>))
 ```
 
-<hr/>
+---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-102) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-103) 
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-102) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-103)
