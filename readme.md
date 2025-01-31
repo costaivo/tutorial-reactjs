@@ -1,4 +1,4 @@
-# ReactJS Guided Tutorial - Quotes App (Version 2) -2025
+# ReactJS Guided Tutorial - Quotes App (v2) -2025
 
 ## Version 2
 
