@@ -4,7 +4,6 @@
 
 ### Create src/components/Navbar.tsx
 
-
 ``` tsx
 import { Link } from 'react-router-dom';
 

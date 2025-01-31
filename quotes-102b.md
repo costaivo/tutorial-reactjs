@@ -13,6 +13,7 @@ export default function AuthorPage() {
     "Ivo Costa",
     "Jakob",
     "John Lennon",
+    "Ivo Costa",
     "Lao-Tze",
     "Larry Niven",
     "Linnie",
@@ -20,6 +21,7 @@ export default function AuthorPage() {
     "Michael Feathers",
     "Michael Jordan",
     "Nelson Mandela",
+    "Lao-Tze",
     "Steve Jobs",
   ];
 
@@ -27,8 +29,8 @@ export default function AuthorPage() {
     <div className="container mt-4">
       <h1>Authors</h1>
       <ul className="list-group mt-3">
-        {authors.map((author, index) => (
-          <li className="list-group-item" key={index}>{author}</li>
+        {authors.map((author) => (
+          <li className="list-group-item">{author}</li>
         ))}
       </ul>
     </div>
@@ -71,8 +73,8 @@ export default function QuotePage() {
     return (
         <div className="container mt-4">
             <h1>All Quotes</h1>
-            {quotes.map((quote, index) => (
-                <div className="card mt-3" key={index}>
+            {quotes.map((quote) => (
+                <div className="card mt-3">
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
                             <p>{quote.text}</p>
@@ -97,13 +99,8 @@ export default function QuotePage() {
 
 export default function HomePage() {
   const quoteOfDay = {
-    likes: 1,
-    dislikes: 0,
-    isActive: true,
-    _id: '611ba4f0bf79660015b222fc',
     quote: 'If you want to shine like a sun, first burn like a sun.',
     author: 'A. P. J. Abdul Kalam',
-    __v: 0,
   };
   return (
       <div className="container mt-4">
