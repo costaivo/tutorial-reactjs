@@ -15,6 +15,35 @@ Add three page components:
 - QuotePage,
 - and AuthorPage.
 
+### Use Snippets to Generate Components
+
+For each file:
+- Create a new file in the `src/pages` directory
+- Open the new file
+- Type the snippet command (**rafce** or **rfe**)
+- Press Tab or Enter to generate the boilerplate
+- Customize the component name and content
+
+Example: HomePage.tsx
+``` tsx
+// Type 'rafce' and press Enter
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>Welcome to the Quotes App!</p>
+    </div>
+  )
+}
+
+export default HomePage
+```
+
+## Change Default Generated code file
+
+- Open the file
+- Change the code to match as shown below
+
 ### Create src/pages/HomePage.tsx:
 
 ``` tsx
