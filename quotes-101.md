@@ -1,162 +1,153 @@
-# React Tutorials - Quotes App - 101 ---> Getting Started
+# React Tutorials - Quotes App - 101b --- > Setting up the Navigation
 
-## Creating the Project Structure
+## Add Routes
 
-### Create react app using `vite`
-
-[Vite](https://vitejs.dev/) is a modern build tool that provides a faster and leaner development experience for modern web projects. It leverages native ES modules and provides a lightning-fast development server with Hot Module Replacement (HMR).
-
-### Using npm, pnpm, or yarn for building the project
-
-You can use different package managers to create and manage your project. Here are the commands for each:
-
-#### npm
+To set up navigation in your React application, you need to install `react-router-dom` which provides the necessary components and hooks for routing. The `@types/react-router-dom` package provides TypeScript definitions for `react-router-dom`.
 
 ``` bash
-npm create vite@latest quotes-app --template react-ts
-cd quotes-app
-npm install
-npm install bootstrap axios
+pnpm add react-router-dom @types/react-router-dom
 ```
 
-**Advantage**: npm is the default package manager for Node.js and has a large ecosystem of packages.
+Now create the page components:
+Add three page components:
 
-#### pnpm
+- HomePage,
+- QuotePage,
+- and AuthorPage.
 
-``` cmd
-pnpm create vite@latest quotes-app --template react-ts
-cd quotes-app
-pnpm install
-pnpm add bootstrap axios @types/bootstrap
+### Use Snippets to Generate Components
+
+For each file:
+- Create a new file in the `src/pages` directory
+- Open the new file
+- Type the snippet command (**rafce** or **rfe**)
+- Press Tab or Enter to generate the boilerplate
+- Customize the component name and content
+
+Example: HomePage.tsx
+``` tsx
+// Type 'rafce' and press Enter
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>Welcome to the Quotes App!</p>
+    </div>
+  )
+}
+
+export default HomePage
 ```
 
-**Advantage**: pnpm uses a unique symlink approach to save disk space and boost installation speed.
+## Change Default Generated code file
 
-#### yarn
+- Open the file
+- Change the code to match as shown below
 
-``` bash
-yarn create vite@latest quotes-app --template react-ts
-cd quotes-app
-yarn
-yarn add bootstrap axios
+### Create src/pages/HomePage.tsx
+
+``` tsx
+
+export default function HomePage() {
+  return (
+    <div className="container mt-4">
+      <h1>Welcome to Quotes App</h1>
+      <p>Explore inspiring quotes from famous authors</p>
+    </div>
+  );
+}
 ```
 
-**Advantage**: yarn is known for its fast performance and reliability due to its efficient caching mechanism.
+### Create src/pages/QuotePage.tsx
 
-### Run the project
-
-#### run using npm
-
-``` bash
-npm run dev
+``` tsx
+export default function QuotePage() {
+  return (
+    <div className="container mt-4">
+      <h1>Random Quote</h1>
+      <div className="card mt-3">
+        <div className="card-body">
+          <blockquote className="blockquote mb-0">
+            <p>Quote content will appear here...</p>
+            <footer className="blockquote-footer mt-2">Author name</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  );
+}
 ```
 
-#### run using pnpm
+### Create src/pages/AuthorPage.tsx
 
-``` bash
-pnpm dev
+```tsx
+
+export default function AuthorPage() {
+  return (
+    <div className="container mt-4">
+      <h1>Authors</h1>
+      <ul className="list-group mt-3">
+        <li className="list-group-item">Author 1</li>
+        <li className="list-group-item">Author 2</li>
+        <li className="list-group-item">Author 3</li>
+      </ul>
+    </div>
+  );
+}
 ```
 
-#### run using yarn
+### Add Routing Logic
 
-``` bash
-yarn dev
-```
+To add routing logic to your application, you need to set up a router in your `src/App.tsx` file. Import the necessary components from `react-router-dom` and define the routes for your pages.
 
-### Clean up the project
+### Update src/App.tsx
 
-Clear the contents of the following files
+``` tsx
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import QuotePage from './pages/QuotePage';
+import AuthorPage from './pages/AuthorPage';
 
-- App.css
-- index.css
-- App.tsx
-- main.tsx
-
-### Modify code and test bootstrap installation
-
-Open the `App.tsx` file
-
-``` typescript
 function App() {
   return (
-    <div className="container mt-5">
-      <button className="btn btn-primary">Hello World</button>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/quotes" element={<QuotePage />} />
+          <Route path="/authors" element={<AuthorPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
 export default App;
 ```
 
-- Open `main.tsx` file
+This code sets up a router with three routes:
 
-``` typescript
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
+- `/` for the `HomePage` component
+- `/quote` for the `QuotePage` component
+- `/authors` for the `AuthorPage` component
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-```
+Now, when you navigate to these paths in your browser, the corresponding components will be rendered.
 
-- Open `public\index.html`  file and replace its content with below code
+### Add Navigation Menu
 
-``` html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/quotes.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quotes App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
-```
+To add a navigation menu to your application.
 
-- open `vite.config.ts` file and add the below code
-
-``` typescript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-    host: '0.0.0.0'
-  }
-});
+``` tsx
+    <div className='"navbar navbar-expand-lg navbar-light bg-light'>
+        <Link className="nav-link" to="/">Home</Link>
+        <Link className="nav-link" to="/quotes">Quotes</Link>
+        <Link className="nav-link" to="/authors">Author</Link>
+      </div>
+      <Routes>
+        <!--- existing routes -->
+        </Routes>
 ```
 
 ---
 
-### Run the application
-
-start the react application and validate if the project is running properly on the default port 3000
-
-``` cmd
-   pnpm dev
-```
-
----
-
-## Setting  Dev Environment Right
-
-Install the below extensions in VS Code to speed up your development time
-
-- [Auto Import](https://marketplace.visualstudio.com/items?itemName=NuclleaR.vscode-extension-auto-import)
-- [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-- [HTML Format](https://marketplace.visualstudio.com/items?itemName=mohd-akram.vscode-html-format)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
----
-
-  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101b)
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
