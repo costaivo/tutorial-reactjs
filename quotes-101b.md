@@ -44,7 +44,7 @@ export default HomePage
 - Open the file
 - Change the code to match as shown below
 
-### Create src/pages/HomePage.tsx:
+### Create src/pages/HomePage.tsx
 
 ``` tsx
 
@@ -58,7 +58,7 @@ export default function HomePage() {
 }
 ```
 
-### Create src/pages/QuotePage.tsx:
+### Create src/pages/QuotePage.tsx
 
 ``` tsx
 export default function QuotePage() {
@@ -78,7 +78,7 @@ export default function QuotePage() {
 }
 ```
 
-### Create src/pages/AuthorPage.tsx:
+### Create src/pages/AuthorPage.tsx
 
 ```tsx
 
