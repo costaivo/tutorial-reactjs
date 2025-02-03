@@ -1,2 +1,13 @@
-theme: jekyll-theme-time-machine
+# Choose one of these:
+# theme: jekyll-theme-minimal
+# or
+# theme: jekyll-theme-cayman
+# or
+theme: just-the-docs
+# or
+# theme: jekyll-theme-primer
+
+# Common settings for all themes
+title: React Tutorial - Quotes App
+description: A step-by-step guide to building a React application
 footer: false
