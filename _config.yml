@@ -1,5 +1,5 @@
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-primer
 
 # Common settings for all themes
 title: React Tutorial - Quotes App
