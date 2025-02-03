@@ -150,4 +150,4 @@ To add a navigation menu to your application.
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101b) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
