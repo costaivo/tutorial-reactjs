@@ -66,6 +66,62 @@ Modify the `src/App.tsx` file to include the Navbar component:
     </div>
 ```
 
+## Add Footer Component
+
+### Create src/components/Footer.tsx
+
+```tsx
+export default function Footer() {
+  return (
+    <footer className="footer mt-auto py-3 bg-dark text-white fixed-bottom">
+      <div className="container text-center">
+        <span>&copy; {new Date().getFullYear()} Quotes App. All rights reserved.</span>
+      </div>
+    </footer>
+  );
+}
+```
+
+#### Code Explanation : Footer
+
+- The Footer component is a simple React functional component
+- It uses Bootstrap classes for styling:
+  - `mt-auto`: Sets margin-top to auto
+  - `py-3`: Adds padding on top and bottom
+  - `bg-dark`: Sets dark background
+  - `text-white`: Makes text color white
+  - `fixed-bottom`: Makes the footer stick to the bottom of the viewport
+- Uses JavaScript's Date object to dynamically display the current year
+- Centers the text using `text-center` class
+
+### Update App.tsx to include the Footer
+
+```tsx
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <div className="App d-flex flex-column min-vh-100">
+      <NavbarDark />
+      <main className="flex-shrink-0">
+        <Routes>
+          {/* existing routes */}
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+```
+
+#### Code Explanation : Footer component
+
+- We wrap the entire App content in a flex container with `d-flex flex-column`
+- `min-vh-100` ensures the container takes at least the full viewport height
+- `main` content is wrapped with `flex-shrink-0` to prevent it from shrinking
+- The Footer component is added after the main content
+- This structure ensures the footer stays at the bottom even when content is short
+
 ---
 
 [<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-103)

@@ -1,4 +1,8 @@
-# React Tutorials - Quotes App - 101 ---> Getting Started
+# React Tutorials - Quotes App - 100 ---> Getting Started
+
+## Introduction
+
+This tutorial series will guide you through building a Quotes Application using React with TypeScript. We'll use modern development tools and best practices to create a responsive, user-friendly application.
 
 ## Creating the Project Structure
 
@@ -6,13 +10,21 @@
 
 [Vite](https://vitejs.dev/) is a modern build tool that provides a faster and leaner development experience for modern web projects. It leverages native ES modules and provides a lightning-fast development server with Hot Module Replacement (HMR).
 
+#### Why Vite?
+
+- **Speed**: Vite is significantly faster than Create React App (CRA)
+- **Modern Architecture**: Uses native ES modules for better performance
+- **Optimized Build**: Produces highly optimized production builds
+- **TypeScript Support**: Built-in TypeScript support without additional configuration
+- **Hot Module Replacement**: Instant feedback during development
+
 ### Using npm, pnpm, or yarn for building the project
 
-You can use different package managers to create and manage your project. Here are the commands for each:
+You can use different package managers to create and manage your project. Choose the one that best fits your needs:
 
 #### npm
 
-``` bash
+```bash
 npm create vite@latest quotes-app --template react-ts
 cd quotes-app
 npm install
@@ -20,10 +32,11 @@ npm install bootstrap axios
 ```
 
 **Advantage**: npm is the default package manager for Node.js and has a large ecosystem of packages.
+**Best for**: Beginners and teams that want maximum compatibility
 
 #### pnpm
 
-``` cmd
+```cmd
 pnpm create vite@latest quotes-app --template react-ts
 cd quotes-app
 pnpm install
@@ -31,10 +44,11 @@ pnpm add bootstrap axios @types/bootstrap
 ```
 
 **Advantage**: pnpm uses a unique symlink approach to save disk space and boost installation speed.
+**Best for**: Large projects and teams concerned about disk space efficiency
 
 #### yarn
 
-``` bash
+```bash
 yarn create vite@latest quotes-app --template react-ts
 cd quotes-app
 yarn
@@ -42,41 +56,55 @@ yarn add bootstrap axios
 ```
 
 **Advantage**: yarn is known for its fast performance and reliability due to its efficient caching mechanism.
+**Best for**: Teams that need deterministic installations and enhanced security
+
+### Project Dependencies Explained
+
+- **bootstrap**: UI framework for responsive design
+- **axios**: HTTP client for making API requests
+- **@types/bootstrap**: TypeScript type definitions for Bootstrap
+- **react-ts template**: Includes TypeScript configuration and React setup
 
 ### Run the project
 
+Choose the command based on your package manager:
+
 #### run using npm
 
-``` bash
+```bash
 npm run dev
 ```
 
 #### run using pnpm
 
-``` bash
+```bash
 pnpm dev
 ```
 
 #### run using yarn
 
-``` bash
+```bash
 yarn dev
 ```
 
+After running these commands, your application will be available at `http://localhost:3000`
+
 ### Clean up the project
 
-Clear the contents of the following files
+To start with a clean slate, we'll remove the default boilerplate code:
 
-- App.css
-- index.css
-- App.tsx
-- main.tsx
+Clear the contents of the following files:
+
+- `App.css`: Remove default styles
+- `index.css`: Remove default styles
+- `App.tsx`: Remove demo content
+- `main.tsx`: Simplify the entry point
 
 ### Modify code and test bootstrap installation
 
-Open the `App.tsx` file
+#### Open the `App.tsx` file
 
-``` typescript
+```typescript
 function App() {
   return (
     <div className="container mt-5">
@@ -88,9 +116,11 @@ function App() {
 export default App;
 ```
 
-- Open `main.tsx` file
+This simple component tests that both React and Bootstrap are working correctly.
 
-``` typescript
+#### Open `main.tsx` file
+
+```typescript
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -103,9 +133,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 ```
 
-- Open `public\index.html`  file and replace its content with below code
+The main file imports Bootstrap CSS and sets up the React application root.
 
-``` html
+#### Open `public\index.html` file
+
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -121,9 +153,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 </html>
 ```
 
-- open `vite.config.ts` file and add the below code
+This HTML file serves as the application shell and includes necessary meta tags for responsive design.
 
-``` typescript
+#### Configure Vite - `vite.config.ts`
+
+```typescript
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -131,32 +165,58 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    host: '0.0.0.0'
+    host: '0.0.0.0'  // Allows access from other devices on the network
   }
 });
 ```
 
----
+This configuration sets up Vite with React plugin and configures the development server.
 
-### Run the application
+### Verify Installation
 
-start the react application and validate if the project is running properly on the default port 3000
+Start the application and check for:
 
-``` cmd
-   pnpm dev
+1. The application runs without errors
+2. You see a blue "Hello World" button (confirms Bootstrap is working)
+3. The button is centered on the page (confirms container class is working)
+
+```cmd
+pnpm dev
+```
+
+## Setting Dev Environment Right
+
+To enhance your development experience, install these recommended VS Code extensions:
+
+- [Auto Import](https://marketplace.visualstudio.com/items?itemName=NuclleaR.vscode-extension-auto-import)
+  - Automatically finds, parses and provides code actions for all available imports
+  - Speeds up development by reducing manual import typing
+
+- [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+  - Provides shortcuts for common React patterns
+  - Includes TypeScript snippets
+
+- [HTML Format](https://marketplace.visualstudio.com/items?itemName=mohd-akram.vscode-html-format)
+  - Formats HTML code for better readability
+  - Supports JSX/TSX formatting
+
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - Ensures consistent code formatting
+  - Can be configured to format on save
+
+### Recommended VS Code Settings
+
+Create or update `.vscode/settings.json` in your project:
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "files.eol": "\n"
+}
 ```
 
 ---
 
-## Setting  Dev Environment Right
-
-Install the below extensions in VS Code to speed up your development time
-
-- [Auto Import](https://marketplace.visualstudio.com/items?itemName=NuclleaR.vscode-extension-auto-import)
-- [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-- [HTML Format](https://marketplace.visualstudio.com/items?itemName=mohd-akram.vscode-html-format)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
----
-
-  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101)
+[Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101)
