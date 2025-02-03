@@ -1,5 +1,5 @@
 
-theme: jekyll-theme-primer
+theme:  jekyll-theme-time-machine
 
 # Common settings for all themes
 title: React Tutorial - Quotes App
