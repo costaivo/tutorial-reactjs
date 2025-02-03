@@ -1,11 +1,5 @@
-# Choose one of these:
-# theme: jekyll-theme-minimal
-# or
- theme: jekyll-theme-cayman
-# or
-#theme: just-the-docs
-# or
-# theme: jekyll-theme-primer
+
+theme: jekyll-theme-minimal
 
 # Common settings for all themes
 title: React Tutorial - Quotes App
