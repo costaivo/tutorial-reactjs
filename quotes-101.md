@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App - 101b --- > Setting up the Navigation
+# React Tutorials - Quotes App - 101 --- > Setting up the Navigation using Routes
 
 ## Add Routes
 
@@ -150,4 +150,4 @@ To add a navigation menu to your application.
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-100) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)

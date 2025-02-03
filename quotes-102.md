@@ -1,6 +1,6 @@
-# React Tutorials - Quotes App - 102 --- > Adding Routes
+# React Tutorials - Quotes App - 102 --- > Adding Navbar and Footer
 
-## Add Navigation Menu compoonent
+## Add Navigation Menu component
 
 ### Create src/components/Navbar.tsx
 
@@ -68,4 +68,4 @@ Modify the `src/App.tsx` file to include the Navbar component:
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-103)
