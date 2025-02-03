@@ -1,9 +1,9 @@
 # Choose one of these:
 # theme: jekyll-theme-minimal
 # or
-# theme: jekyll-theme-cayman
+ theme: jekyll-theme-cayman
 # or
-theme: just-the-docs
+#theme: just-the-docs
 # or
 # theme: jekyll-theme-primer
 
