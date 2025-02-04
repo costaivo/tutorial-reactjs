@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App - 102 --- > Adding Navbar and Footer
+# React Tutorials - Quotes App - 102 --- > Add Navbar and Footer
 
 ## Add Navigation Menu component
 

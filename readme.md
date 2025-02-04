@@ -6,8 +6,8 @@
 
 - [Quotes-100 -- Getting Started - Project Setup](https://costaivo.com/tutorial-reactjs/quotes-100)
 - [Quotes-101 -- Add Navigation Menus](https://costaivo.com/tutorial-reactjs/quotes-101)
-- [Quotes-102 -- Add Routes](https://costaivo.com/tutorial-reactjs/quotes-102)
-- [Quotes-103 -- Listing Data](https://costaivo.com/tutorial-reactjs/quotes-103)
+- [Quotes-102 -- Add Nav and Footer components](https://costaivo.com/tutorial-reactjs/quotes-102)
+- [Quotes-103 -- Listing static data and Linking  pages](https://costaivo.com/tutorial-reactjs/quotes-103)
 - **TBD** -->Quotes-103 -- Passing Data between Components
 - **TBD** -->Quotes-104 -- Connecting to API
 - **TBD** -->Quotes-104b -- Custom Hooks

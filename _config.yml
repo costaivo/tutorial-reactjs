@@ -1,6 +1,6 @@
 
-theme:  jekyll-theme-time-machine
-
+theme:  just-the-docs
+remote_theme: just-the-docs/just-the-docs
 # Common settings for all themes
 title: React Tutorial - Quotes App
 description: A step-by-step guide to building a React application

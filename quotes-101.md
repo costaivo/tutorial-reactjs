@@ -18,6 +18,7 @@ Add three page components:
 ### Use Snippets to Generate Components
 
 For each file:
+
 - Create a new file in the `src/pages` directory
 - Open the new file
 - Type the snippet command (**rafce** or **rfe**)
@@ -25,6 +26,7 @@ For each file:
 - Customize the component name and content
 
 Example: HomePage.tsx
+
 ``` tsx
 // Type 'rafce' and press Enter
 const HomePage = () => {
