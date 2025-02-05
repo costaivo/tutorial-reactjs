@@ -28,7 +28,7 @@ You can use different package managers to create and manage your project. Choose
 npm create vite@latest quotes-app --template react-ts
 cd quotes-app
 npm install
-npm install bootstrap axios
+npm install bootstrap 
 ```
 
 **Advantage**: npm is the default package manager for Node.js and has a large ecosystem of packages.
@@ -40,7 +40,7 @@ npm install bootstrap axios
 pnpm create vite@latest quotes-app --template react-ts
 cd quotes-app
 pnpm install
-pnpm add bootstrap axios @types/bootstrap
+pnpm add bootstrap  @types/bootstrap
 ```
 
 **Advantage**: pnpm uses a unique symlink approach to save disk space and boost installation speed.
@@ -52,7 +52,7 @@ pnpm add bootstrap axios @types/bootstrap
 yarn create vite@latest quotes-app --template react-ts
 cd quotes-app
 yarn
-yarn add bootstrap axios
+yarn add bootstrap 
 ```
 
 **Advantage**: yarn is known for its fast performance and reliability due to its efficient caching mechanism.
@@ -61,7 +61,6 @@ yarn add bootstrap axios
 ### Project Dependencies Explained
 
 - **bootstrap**: UI framework for responsive design
-- **axios**: HTTP client for making API requests
 - **@types/bootstrap**: TypeScript type definitions for Bootstrap
 - **react-ts template**: Includes TypeScript configuration and React setup
 
@@ -95,10 +94,14 @@ To start with a clean slate, we'll remove the default boilerplate code:
 
 Clear the contents of the following files:
 
-- `App.css`: Remove default styles
-- `index.css`: Remove default styles
-- `App.tsx`: Remove demo content
-- `main.tsx`: Simplify the entry point
+- `App.css`: Remove default styles. Empty the contents of the file.
+- `index.css`: Remove default styles. Empty the contents of the file.
+- `App.tsx`: Remove demo content. Empty the contents of the file
+- `main.tsx`: add the import statement to include bootstrap at the end of existing imports
+
+  ```tsx
+  import 'bootstrap/dist/css/bootstrap.min.css';
+  ```
 
 ### Modify code and test bootstrap installation
 
@@ -118,18 +121,21 @@ export default App;
 
 This simple component tests that both React and Bootstrap are working correctly.
 
-#### Open `main.tsx` file
+#### The `main.tsx` file
+
+The contents of  `main.tsx` file should like the one shown below.
 
 ```typescript
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>,
 );
 ```
 
@@ -156,6 +162,8 @@ The main file imports Bootstrap CSS and sets up the React application root.
 This HTML file serves as the application shell and includes necessary meta tags for responsive design.
 
 #### Configure Vite - `vite.config.ts`
+
+Change the port to run on 3000 instead of the default port.
 
 ```typescript
 import { defineConfig } from 'vite';
