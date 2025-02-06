@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App - 100 ---> Getting Started
+# React Tutorials - Quotes App  -- Getting Started
 
 ## Introduction
 
