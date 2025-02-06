@@ -156,11 +156,15 @@ Now, when you navigate to these paths in your browser, the corresponding compone
 To add a navigation menu to your application.
 
 ``` tsx
-    <div className='"navbar navbar-expand-lg navbar-light bg-light'>
-        <Link className="nav-link" to="/">Home</Link>
-        <Link className="nav-link" to="/quotes">Quotes</Link>
-        <Link className="nav-link" to="/authors">Author</Link>
-      </div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+          <div className="navbar-nav">
+            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/quotes">Quotes</Link>
+            <Link className="nav-link" to="/authors">Author</Link>
+            </div>
+          </div>
+        </nav>
       <Routes>
         <!--- existing routes -->
         </Routes>
