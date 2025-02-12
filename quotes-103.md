@@ -151,6 +151,18 @@ authors.map(author=>(<p>
               </p>))
 ```
 
+## Testing the application
+
+- Run the application using `pnpm run dev`
+- Open the application in the browser using `http://localhost:3000`
+- Test the application by clicking on the links to navigate to the different pages
+- On the browser console check for any errors
+- On the browser console, check the network calls to ensure that the application is working as expected
+
+```diff
+- Fix the issues in the code to ensure no errors are shown in the browser console
+```
+
 ---
 
 [<< Previous](https://costaivo.com/tutorial-reactjs/quotes-102) |  [Index](https://costaivo.com/tutorial-reactjs) |  
