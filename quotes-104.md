@@ -132,4 +132,4 @@ In the next tutorial, we'll connect our application to API endpoints to fetch re
 
 ---
 
-[<< Previous](../quotes-103) | [Index](../) | [Next >>](../quotes-105)
+[<< Previous](/tutorial-reactjs/quotes-103) | [Index](../tutorial-reactjs/) | [Next >>](../tutorial-reactjs/quotes-105)
