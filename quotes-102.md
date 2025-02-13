@@ -150,4 +150,4 @@ This structure ensures that:
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-101) | [Index](https://costaivo.com/tutorial-reactjs) | [Next>>](https://costaivo.com/tutorial-reactjs/quotes-103)
+[<< Previous](/tutorial-reactjs/quotes-101) | [Index](/tutorial-reactjs/) | [Next >>](../tutorial-reactjs/quotes-103)

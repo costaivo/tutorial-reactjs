@@ -245,5 +245,4 @@ Create or update `.vscode/settings.json` in your project:
 ```
 
 ---
-
-[Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-101)
+ [Index](/tutorial-reactjs/) | [Next >>](../tutorial-reactjsquotes-101)

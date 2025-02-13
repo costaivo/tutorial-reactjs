@@ -165,4 +165,4 @@ authors.map(author=>(<p>
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-102) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next >>](https://costaivo.com/tutorial-reactjs/quotes-104)
+[<< Previous](/tutorial-reactjs/quotes-102) | [Index](/tutorial-reactjs/) | [Next >>](../tutorial-reactjs/quotes-104)

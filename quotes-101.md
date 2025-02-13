@@ -172,4 +172,4 @@ To add a navigation menu to your application.
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-100) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next>>](https://costaivo.com/tutorial-reactjs/quotes-102)
+[<< Previous](/tutorial-reactjs/quotes-100) | [Index](/tutorial-reactjs/) | [Next >>](../tutorial-reactjs/quotes-102)
