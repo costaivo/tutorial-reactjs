@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App  -- Getting Started
+# React Tutorials - Quotes App  -100- Getting Started
 
 ## Introduction
 
@@ -22,6 +22,10 @@ This tutorial series will guide you through building a Quotes Application using 
 
 You can use different package managers to create and manage your project. Choose the one that best fits your needs:
 
+### Package Manager Options
+
+Choose your preferred package manager based on your needs:
+
 #### npm
 
 ```bash
@@ -31,20 +35,30 @@ npm install
 npm install bootstrap 
 ```
 
-**Advantage**: npm is the default package manager for Node.js and has a large ecosystem of packages.
-**Best for**: Beginners and teams that want maximum compatibility
+**Key Advantages**:
+
+- Default Node.js package manager
+- Largest package ecosystem
+- Most community resources
+- Best documentation
+- Widest compatibility
 
 #### pnpm
 
-```cmd
+```bash
 pnpm create vite@latest quotes-app --template react-ts
 cd quotes-app
 pnpm install
-pnpm add bootstrap  @types/bootstrap
+pnpm add bootstrap @types/bootstrap
 ```
 
-**Advantage**: pnpm uses a unique symlink approach to save disk space and boost installation speed.
-**Best for**: Large projects and teams concerned about disk space efficiency
+**Key Advantages**:
+
+- Disk space efficient (uses symlinks)
+- Faster installation speeds
+- Strict dependency management
+- Built-in monorepo support
+- Lower disk usage
 
 #### yarn
 
@@ -55,8 +69,13 @@ yarn
 yarn add bootstrap 
 ```
 
-**Advantage**: yarn is known for its fast performance and reliability due to its efficient caching mechanism.
-**Best for**: Teams that need deterministic installations and enhanced security
+**Key Advantages**:
+
+- Parallel package downloads
+- Deterministic installations
+- Built-in security features
+- Offline mode support
+- Workspaces for monorepos
 
 ### Project Dependencies Explained
 

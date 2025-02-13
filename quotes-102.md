@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App - 102 - Adding Navigation and Footer
+# React Tutorials - Quotes App -102- Adding Navigation and Footer
 
 In this tutorial, we'll enhance our Quotes application by adding a navigation menu and footer. These components will provide better structure and navigation capabilities to our app.
 

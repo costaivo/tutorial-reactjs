@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App - 103 --- > Wiring all the pages to work
+# React Tutorials - Quotes App -103- Wiring Pages to work
 
 ## Author Page
 
@@ -165,4 +165,4 @@ authors.map(author=>(<p>
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-102) |  [Index](https://costaivo.com/tutorial-reactjs) |  
+[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-102) |  [Index](https://costaivo.com/tutorial-reactjs) |  [Next >>](https://costaivo.com/tutorial-reactjs/quotes-104)

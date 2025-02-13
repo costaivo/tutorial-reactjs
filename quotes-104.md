@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App - 104 - DRY Principle
+# React Tutorials - Quotes App -104- DRY Principle
 
 ## What is DRY?
 
@@ -11,7 +11,7 @@ We noticed that both the Home Page and Quotes Page use identical code to render 
 ### Creating the Quote Component
 
 1. Create a new file `Quote.jsx` in the `components` folder
-2. Add the following code:
+1. Add the following code:
 
 ```javascript
 function Quote(props) {
@@ -28,7 +28,7 @@ function Quote(props) {
 export default Quote;
 ```
 
-3. Update `QuotePage.jsx` to use the new component:
+1. Update `QuotePage.jsx` to use the new component:
 
 ```javascript
 {quotes.map((quote) => (
@@ -36,7 +36,7 @@ export default Quote;
 ))}
 ```
 
-4. Update `HomePage.jsx` to use the same component:
+1. Update `HomePage.jsx` to use the same component:
 
 ```javascript
 <Quote quote={quoteOfDay} />
@@ -52,7 +52,7 @@ export default Quote;
 <Route path="/quote/:author" element={<QuotePage />} />
 ```
 
-2. Modify `AuthorPage.jsx` to create author links:
+1. Modify `AuthorPage.jsx` to create author links:
 
 ```javascript
 <Link to={`/quote/${author}`}>{author}</Link>
@@ -82,7 +82,7 @@ const getFilteredQuotes = (author) => {
 const [searchAuthor, setSearchAuthor] = useState('');
 ```
 
-2. Create the search input:
+1. Create the search input:
 
 ```javascript
 <input
@@ -94,7 +94,7 @@ const [searchAuthor, setSearchAuthor] = useState('');
 />
 ```
 
-3. Implement the change handler:
+1. Implement the change handler:
 
 ```javascript
 const handleOnChange = (e) => {
@@ -118,7 +118,7 @@ const handleSubmit = (e) => {
 };
 ```
 
-2. Use `useEffect` for initial loading:
+1. Use `useEffect` for initial loading:
 
 ```javascript
 useEffect(() => {
@@ -132,4 +132,4 @@ In the next tutorial, we'll connect our application to API endpoints to fetch re
 
 ---
 
-[<< Previous](https://costaivo.com/tutorial-reactjs/quotes-102b) | [Index](https://costaivo.com/tutorial-reactjs) | [Next >>](https://costaivo.com/tutorial-reactjs/quotes-104)
+[<< Previous](../quotes-103) | [Index](../) | [Next >>](../quotes-105)
