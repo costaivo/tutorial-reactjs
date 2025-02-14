@@ -216,11 +216,10 @@ If you encounter issues:
 
 With our navigation structure in place, in quotes-102 we'll:
 
-- Add real quote data to our application
-- Create reusable components for displaying quotes
-- Implement quote filtering and searching functionality
+- Move the navigation to a separate component
+- Add a sticky footer to the application
 
-This will transform our basic structure into a dynamic quotes application.
+This will transform our basic app to look like a real web application.
 
 ---
 
