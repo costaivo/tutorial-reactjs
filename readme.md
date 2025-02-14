@@ -1,6 +1,6 @@
 # ReactJS Guided Tutorial - Quotes App (v2)
 
-    Release Date: Jan 2025
+>> Release Date: Jan 2025
 
 ## Part 1 - Basics
 
