@@ -301,6 +301,8 @@ Start the application and check for:
 pnpm dev
 ```
 
+![A browser window showing the Quotes App with a blue Hello World button](100-hello-world.png "Initial Hello World app with Bootstrap styling")
+
 ## Setting Dev Environment Right
 
 To enhance your development experience, install these recommended VS Code extensions:
