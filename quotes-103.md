@@ -10,10 +10,8 @@ In this section, we'll:
 
 1. Implement the Authors page with:
    - List of unique authors
-   - Clickable author names linking to quotes
 2. Create the Quotes page featuring:
    - Display of quote cards with text and author
-   - Search functionality by author name
 3. Set up the Home page with:
    - Quote of the day feature
    - Welcome message and app description
@@ -24,32 +22,22 @@ In this section, we'll:
 
 ```typescript
 export default function AuthorPage() {
-  // Remove duplicate authors using Set
   const authors = [...new Set([
     "A. P. J. Abdul Kalam",
-    "Gandhi",
-    "Ivo Costa",
-    "Jakob",
-    "John Lennon",
-    "Lao-Tze",
-    "Larry Niven",
-    "Linnie",
-    "Martin Fowler",
-    "Michael Feathers",
-    "Michael Jordan",
-    "Nelson Mandela",
-    "Steve Jobs",
-  ])];
+    "Albert Einstein",
+    "Mahatma Gandhi",
+    "Ralph Waldo Emerson",
+    "Robert Frost",
+    "Steve Jobs"
+  ])].sort(); 
 
   return (
     <div className="container mt-4">
       <h1>Authors</h1>
       <ul className="list-group mt-3">
-        {authors.map((author, index) => (
-          <li key={index} className="list-group-item">
-            <Link to={`/quotes?author=${encodeURIComponent(author)}`}>
+        {authors.map((author) => (
+          <li key={author} className="list-group-item">
               {author}
-            </Link>
           </li>
         ))}
       </ul>
@@ -66,23 +54,28 @@ export default function AuthorPage() {
 export default function QuotePage() {
     const quotes = [
         {
-            text: "Be the change you wish to see in the world.",
+            _id: "550e8400-e29b-41d4-a716-446655440000",
+            quote: "Be the change you wish to see in the world.",
             author: "Mahatma Gandhi"
         },
         {
-            text: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            _id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+            quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
             author: "Albert Einstein"
         },
         {
-            text: "In three words I can sum up everything I've learned about life: it goes on.",
+            _id: "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+            quote: "In three words I can sum up everything I've learned about life: it goes on.",
             author: "Robert Frost"
         },
         {
-            text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+            _id: "6ba7b812-9dad-11d1-80b4-00c04fd430c8",
+            quote: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
             author: "Ralph Waldo Emerson"
         },
         {
-            text: "The only way to do great work is to love what you do.",
+            _id: "6ba7b813-9dad-11d1-80b4-00c04fd430c8",
+            quote: "The only way to do great work is to love what you do.",
             author: "Steve Jobs"
         }
     ];
@@ -90,22 +83,11 @@ export default function QuotePage() {
     return (
         <div className="container mt-4">
             <h1>All Quotes</h1>
-            <form className="row m-3">
-                <div className="input-group">
-                    <span className="input-group-text" id="basic-addon1">
-                        Search by Author
-                    </span>
-                    <input type="text" className="form-control" placeholder="Author Name" />
-                    <button type="submit" className="btn btn-primary">
-                        Search
-                    </button>
-                </div>
-            </form>
             {quotes.map((quote, index) => (
                 <div key={index} className="card mt-3">
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
-                            <p>{quote.text}</p>
+                            <p>{quote.quote}</p>
                             <footer className="blockquote-footer mt-2">{quote.author}</footer>
                         </blockquote>
                     </div>
@@ -121,27 +103,30 @@ export default function QuotePage() {
 ### Quote of the Day
 
 ```typescript
+import Quote from "../components/Quote";
+
 export default function HomePage() {
-  const quoteOfDay = {
-    quote: 'If you want to shine like a sun, first burn like a sun.',
-    author: 'A. P. J. Abdul Kalam',
-  };
-  
-  return (
-    <div className="container mt-4">
-      <h1>Quotes App</h1>
-      <p><strong>Explore inspiring quotes from famous authors</strong></p>
-      <hr />
-      <h3 className="text-primary">Quote of the Day</h3>
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">{quoteOfDay.quote}</h5>
-          <p className="card-text">Author: {quoteOfDay.author}</p>
+    const quoteOfDay = {
+        _id: "9ba7b812-9dad-11d1-80b4-00c04fd430c8",
+        quote: 'If you want to shine like a sun, first burn like a sun.',
+        author: 'A. P. J. Abdul Kalam',
+      };
+    return (
+        <div className="container mt-4">
+        <h1>Quotes App</h1>
+        <p><strong>Explore inspiring quotes from famous authors</strong></p>
+        <hr />
+        <div  className="card mt-3">
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                            <p>{quoteOfDay.quote}</p>
+                            <footer className="blockquote-footer mt-2">{quoteOfDay.author}</footer>
+                        </blockquote>
+                    </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 ```
 
 ## Testing the Application
@@ -165,10 +150,9 @@ pnpm run dev
 
 In quotes-104, we'll:
 
-- Add state management for the search functionality
-- Implement filtering quotes by author
-- Add error handling and loading states
-- Enhance the user experience with feedback messages
+- Add Quote Card Component
+- Add Search Form
+- Link the Author Page to the Quotes Page
 
 This will make our application fully interactive and user-friendly.
 

@@ -13,24 +13,36 @@ We noticed that both the Home Page and Quotes Page use identical code to render 
 1. Create a new file `Quote.jsx` in the `components` folder
 1. Add the following code:
 
-```javascript
-function Quote(props) {
-  const { quote } = props;
-  return (
-    <div className="m-2">
-      <h5>{quote.quote}</h5>
-      <h6>{quote.author}</h6>
-      <hr />
-    </div>
-  );
+```tsx
+interface QuoteType {
+  _id: string;
+  text: string;
+  author: string;
 }
 
-export default Quote;
+interface QuoteProps {
+  quote: QuoteType;
+}
+
+function Quote({ quote }: QuoteProps) {
+  return (
+    <div className="card mt-3">
+      <div className="card-body">
+        <blockquote className="blockquote mb-0">
+          <p>{quote.text}</p>
+          <footer className="blockquote-footer mt-2">{quote.author}</footer>
+        </blockquote>
+      </div>
+    </div>
+  )
+}
+
+export default Quote
 ```
 
 1. Update `QuotePage.jsx` to use the new component:
 
-```javascript
+```tsx
 {quotes.map((quote) => (
   <Quote quote={quote} key={quote._id} />
 ))}
@@ -38,7 +50,7 @@ export default Quote;
 
 1. Update `HomePage.jsx` to use the same component:
 
-```javascript
+```tsx
 <Quote quote={quoteOfDay} />
 ```
 
@@ -46,89 +58,50 @@ export default Quote;
 
 ### Configure Route Parameters
 
-1. Update `App.js` to handle author-specific routes:
+1. Update `App.tsx` to handle author-specific routes:
 
-```javascript
-<Route path="/quote/:author" element={<QuotePage />} />
+```tsx
+<Route path="/quotes" element={<QuotePage />} />
+<Route path="/quotes/:author" element={<QuotePage />} />
 ```
 
-1. Modify `AuthorPage.jsx` to create author links:
+1. Modify `AuthorPage.tsx` to create author links:
 
-```javascript
-<Link to={`/quote/${author}`}>{author}</Link>
+```tsx
+<Link to={`/quotes?author=${encodeURIComponent(author)}`}>
 ```
 
-### Implementing Quote Filtering
+1. Update `QuotePage.tsx` to handle author-specific quotes:
 
-Use the `useParams` hook to filter quotes by author:
+```tsx
+import { useSearchParams } from 'react-router-dom';
 
-```javascript
-const params = useParams();
-
-const getFilteredQuotes = (author) => {
-  if (author && author !== '') {
-    quotes = quotes.filter((x) => x.author === author);
-  }
-};
+export default function QuotePage() {
+    const [searchParams] = useSearchParams();
+    const author = searchParams.get('author');
+  // Filter quotes if author parameter exists
+  const displayedQuotes = author 
+    ? quotes.filter(q => q.author === decodeURIComponent(author))
+    : quotes;
+  
+  return (
+    // ... existing JSX using displayedQuotes
+  );
+}
 ```
 
-## Adding Search Functionality
+## Project Structure After Changes
 
-### Setting up State Management
-
-1. Initialize state using the `useState` hook:
-
-```javascript
-const [searchAuthor, setSearchAuthor] = useState('');
+```bash
+src/
+├── components/
+│   └── Quote.tsx       # New reusable quote component
+├── pages/
+│   ├── HomePage.tsx    # Updated to use Quote component
+│   ├── QuotePage.tsx   # Updated to use Quote component
+│   └── AuthorPage.tsx  # Updated with author links
+└── App.tsx            # Updated with new routes
 ```
-
-1. Create the search input:
-
-```javascript
-<input
-  type="text"
-  className="form-control"
-  placeholder="Author Name"
-  value={searchAuthor}
-  onChange={handleOnChange}
-/>
-```
-
-1. Implement the change handler:
-
-```javascript
-const handleOnChange = (e) => {
-  e.preventDefault();
-  setSearchAuthor(e.target.value);
-};
-```
-
-### Managing Quote Loading
-
-1. Create helper functions:
-
-```javascript
-const loadQuotes = () => {
-  getFilteredQuotes(params.author);
-};
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  getFilteredQuotes(searchAuthor);
-};
-```
-
-1. Use `useEffect` for initial loading:
-
-```javascript
-useEffect(() => {
-  loadQuotes();
-}, []);
-```
-
-## Next Steps
-
-In the next tutorial, we'll connect our application to API endpoints to fetch real data.
 
 ---
 
