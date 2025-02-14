@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section, we'll enhance our Quotes application by adding search and filter functionality. We'll follow the DRY (Don't Repeat Yourself) principle to create reusable components and implement a search feature that allows users to filter quotes by author.
+In this section, we'll add search functionality to filter quotes by author. We'll create reusable components and follow best practices for state management and error handling.
 
 ## Prerequisites
 
@@ -10,18 +10,11 @@ In this section, we'll enhance our Quotes application by adding search and filte
 - Understanding of React hooks (useState, useEffect)
 - Familiarity with TypeScript and React Router
 
-## What We'll Build
+## Step-by-Step Instructions
 
-1. A reusable search form component
-2. Author-based quote filtering
-3. Loading states and error handling
-4. URL parameter integration
+### 1. Create the Search Form Component
 
-## Step 1: Creating the Search Form Component
-
-First, let's create a reusable search form component that we can use across our application.
-
-### Create src/components/SearchForm.tsx
+Create a new file `src/components/SearchForm.tsx`. This component will handle the search input and form submission:
 
 ```tsx
 import { useState, ChangeEvent, FormEvent } from 'react';
@@ -46,10 +39,6 @@ export default function SearchForm({
     onSearch(searchTerm);
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
-
   return (
     <form onSubmit={handleSubmit} className="row m-3">
       <div className="input-group">
@@ -59,7 +48,7 @@ export default function SearchForm({
           className="form-control" 
           placeholder={placeholder}
           value={searchTerm}
-          onChange={handleChange}
+          onChange={(e) => setSearchTerm(e.target.value)}
           disabled={isLoading}
         />
         <button 
@@ -75,11 +64,39 @@ export default function SearchForm({
 }
 ```
 
-## Step 2: Implementing the Quotes Page
+### 2. Create a Loading Spinner Component
 
-Update the Quotes page to include search functionality and handle loading states.
+Create `src/components/LoadingSpinner.tsx` for showing loading states:
 
-### Update src/pages/QuotesPage.tsx
+```tsx
+interface LoadingSpinnerProps {
+  size?: 'sm' | 'md' | 'lg';
+  color?: string;
+}
+
+export default function LoadingSpinner({ 
+  size = 'md',
+  color = 'primary'
+}: LoadingSpinnerProps) {
+  const sizeClass = size === 'lg' ? 'spinner-border-lg' : 
+                    size === 'sm' ? '' : 'spinner-border-md';
+
+  return (
+    <div className="text-center mt-4">
+      <div 
+        className={`spinner-border text-${color} ${sizeClass}`} 
+        role="status"
+      >
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  );
+}
+```
+
+### 3. Update the Quotes Page
+
+Update `src/pages/QuotesPage.tsx` to implement the search functionality:
 
 ```tsx
 import { useState, useEffect } from 'react';
@@ -102,10 +119,10 @@ export default function QuotesPage() {
     setIsLoading(true);
     
     try {
-      // Update URL with search parameter
+      // Update URL parameters
       setSearchParams(searchAuthor ? { author: searchAuthor } : {});
       
-      // Filter quotes (will be replaced with API call later)
+      // Filter quotes (we'll replace this with an API call later)
       const filtered = searchAuthor.trim()
         ? quotes.filter(quote => 
             quote.author.toLowerCase().includes(searchAuthor.toLowerCase())
@@ -119,13 +136,12 @@ export default function QuotesPage() {
       setQuotes(filtered);
     } catch (err) {
       setError('Failed to filter quotes. Please try again.');
-      console.error('Search error:', err);
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Initial load of quotes
+  // Load initial quotes when author parameter exists
   useEffect(() => {
     if (authorParam) {
       handleSearch(authorParam);
@@ -162,90 +178,25 @@ export default function QuotesPage() {
 }
 ```
 
-## Step 3: Adding a Loading Spinner Component
+## Testing Your Implementation
 
-Create a reusable loading spinner component.
+1. Start your development server
+2. Navigate to the Quotes page
+3. Try searching for an author:
+   - Enter a name in the search box
+   - Verify the URL updates with the search parameter
+   - Check that the loading spinner appears
+   - Confirm filtered results are displayed
+4. Test error cases:
+   - Search for a non-existent author
+   - Verify error message appears
+   - Clear the search and confirm all quotes return
 
-### Create src/components/LoadingSpinner.tsx
-
-```tsx
-interface LoadingSpinnerProps {
-  size?: 'sm' | 'md' | 'lg';
-  color?: string;
-}
-
-export default function LoadingSpinner({ 
-  size = 'md',
-  color = 'primary'
-}: LoadingSpinnerProps) {
-  const sizeClass = {
-    sm: '',
-    md: 'spinner-border-md',
-    lg: 'spinner-border-lg'
-  }[size];
-
-  return (
-    <div className="text-center mt-4">
-      <div 
-        className={`spinner-border text-${color} ${sizeClass}`} 
-        role="status"
-      >
-        <span className="visually-hidden">Loading...</span>
-      </div>
-    </div>
-  );
-}
-```
-
-## Key Features Implemented
-
-1. **Reusable Search Form**
-   - Accepts initial value and custom placeholder
-   - Handles form submission and input changes
-   - Provides clean interface through props
-   - Supports loading state with disabled inputs
-
-2. **URL Parameter Integration**
-   - Search terms are reflected in URL
-   - Enables bookmarking and sharing of search results
-   - Maintains search state on page refresh
-
-3. **Loading and Error States**
-   - Shows loading spinner during filtering
-   - Displays user-friendly error messages
-   - Handles edge cases gracefully
-   - Includes error logging
-
-4. **Responsive Design**
-   - Works well on all screen sizes
-   - Uses Bootstrap classes for consistent styling
-   - Maintains accessibility
-   - Provides visual feedback during loading
-
-## Common Issues and Solutions
-
-1. **Search Not Updating URL**
-   - Make sure to use `setSearchParams` correctly
-   - Check that the router is properly configured
-
-2. **Loading State Issues**
-   - Verify `isLoading` state is being passed to components
-   - Ensure proper error handling in async functions
-
-3. **Type Errors**
-   - Import and use proper TypeScript interfaces
-   - Use specific event types for handlers
-
-## What's Next
+## Next Steps
 
 In the next tutorial, we'll:
-
-- Connect the search functionality to a real API
-- Implement debounced search for better performance
-- Add pagination for large result sets
-- Enhance error handling with retry mechanisms
-- Add search history functionality
-
----
+- Connect to a real API for searching
+- Add pagination
+- Implement search history
 
 [<< Previous](/tutorial-reactjs/quotes-104) | [Index](/tutorial-reactjs/) | [Next >>](/tutorial-reactjs/quotes-106)

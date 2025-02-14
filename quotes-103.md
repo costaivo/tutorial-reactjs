@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App -103- Wiring Pages to Work
+# React Tutorials - Quotes App -103-  Listing static data and Linking  pages
 
 ## Introduction
 

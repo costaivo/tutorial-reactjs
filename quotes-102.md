@@ -1,4 +1,4 @@
-# React Tutorials - Quotes App -102- Adding Navigation and Footer
+# React Tutorials - Quotes App -102- Adding Navigation and Footer Components
 
 ## Introduction
 
