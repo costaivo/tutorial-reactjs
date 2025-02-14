@@ -143,15 +143,15 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App d-flex flex-column min-vh-100">
+    <Router>
+      <div className="App">
       <NavbarDark />
-      <main className="flex-shrink-0 mb-5">
         <Routes>
-          {/* existing routes */}
+        {/* existing routes */}
         </Routes>
-      </main>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 ```
