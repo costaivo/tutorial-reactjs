@@ -16,7 +16,7 @@ We noticed that both the Home Page and Quotes Page use identical code to render 
 ```tsx
 interface QuoteType {
   _id: string;
-  text: string;
+  quote: string;
   author: string;
 }
 
@@ -29,7 +29,7 @@ function Quote({ quote }: QuoteProps) {
     <div className="card mt-3">
       <div className="card-body">
         <blockquote className="blockquote mb-0">
-          <p>{quote.text}</p>
+          <p>{quote.quote}</p>
           <footer className="blockquote-footer mt-2">{quote.author}</footer>
         </blockquote>
       </div>

@@ -103,8 +103,6 @@ export default function QuotePage() {
 ### Quote of the Day
 
 ```typescript
-import Quote from "../components/Quote";
-
 export default function HomePage() {
     const quoteOfDay = {
         _id: "9ba7b812-9dad-11d1-80b4-00c04fd430c8",
