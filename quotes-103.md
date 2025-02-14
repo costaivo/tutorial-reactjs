@@ -39,7 +39,6 @@ export default function AuthorPage() {
     "Michael Feathers",
     "Michael Jordan",
     "Nelson Mandela",
-    "Lao-Tze",
     "Steve Jobs",
   ])];
 
