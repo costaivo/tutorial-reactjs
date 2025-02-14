@@ -1,13 +1,31 @@
-# React Tutorials - Quotes App -103- Wiring Pages to work
+# React Tutorials - Quotes App -103- Wiring Pages to Work
+
+## Introduction
+
+In this section, we'll implement the core functionality of our pages by adding real data and interactive features. We'll populate our pages with actual quotes and authors, and add search functionality to help users find specific content.
+
+## What We'll Build
+
+In this section, we'll:
+
+1. Implement the Authors page with:
+   - List of unique authors
+   - Clickable author names linking to quotes
+2. Create the Quotes page featuring:
+   - Display of quote cards with text and author
+   - Search functionality by author name
+3. Set up the Home page with:
+   - Quote of the day feature
+   - Welcome message and app description
 
 ## Author Page
 
 ### Listing the Authors
 
-``` typescript
-
+```typescript
 export default function AuthorPage() {
-  const authors = [
+  // Remove duplicate authors using Set
+  const authors = [...new Set([
     "A. P. J. Abdul Kalam",
     "Gandhi",
     "Ivo Costa",
@@ -23,14 +41,18 @@ export default function AuthorPage() {
     "Nelson Mandela",
     "Lao-Tze",
     "Steve Jobs",
-  ];
+  ])];
 
   return (
     <div className="container mt-4">
       <h1>Authors</h1>
       <ul className="list-group mt-3">
-        {authors.map((author) => (
-          <li className="list-group-item">{author}</li>
+        {authors.map((author, index) => (
+          <li key={index} className="list-group-item">
+            <Link to={`/quotes?author=${encodeURIComponent(author)}`}>
+              {author}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
@@ -42,10 +64,7 @@ export default function AuthorPage() {
 
 ### Listing Quotes
 
-- Assign the values to a const variable **quotes** in the `QuotePage.jsx`
-- Write a map function in the return statement to render the author names as a list
-
-``` typescript
+```typescript
 export default function QuotePage() {
     const quotes = [
         {
@@ -73,8 +92,19 @@ export default function QuotePage() {
     return (
         <div className="container mt-4">
             <h1>All Quotes</h1>
-            {quotes.map((quote) => (
-                <div className="card mt-3">
+            <form className="row m-3">
+                <div className="input-group">
+                    <span className="input-group-text" id="basic-addon1">
+                        Search by Author
+                    </span>
+                    <input type="text" className="form-control" placeholder="Author Name" />
+                    <button type="submit" className="btn btn-primary">
+                        Search
+                    </button>
+                </div>
+            </form>
+            {quotes.map((quote, index) => (
+                <div key={index} className="card mt-3">
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
                             <p>{quote.text}</p>
@@ -90,79 +120,60 @@ export default function QuotePage() {
 
 ## Home Page
 
-### Quote of the day
+### Quote of the Day
 
-- create a variable **quoteOfDay** and set it to a quote value
-- write code to rendre the quote
-
-``` typescript
-
+```typescript
 export default function HomePage() {
   const quoteOfDay = {
     quote: 'If you want to shine like a sun, first burn like a sun.',
     author: 'A. P. J. Abdul Kalam',
   };
+  
   return (
-      <div className="container mt-4">
-        <h1>Quotes App</h1>
-        <p><strong>Explore inspiring quotes from famous authors</strong></p>
-        <hr></hr>
-        <p> <h3 className="text-primary"> Quote of the Day </h3></p>
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{quoteOfDay.quote}</h5>
-            <p className="card-text">Author: {quoteOfDay.author}</p>
-          </div>
+    <div className="container mt-4">
+      <h1>Quotes App</h1>
+      <p><strong>Explore inspiring quotes from famous authors</strong></p>
+      <hr />
+      <h3 className="text-primary">Quote of the Day</h3>
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{quoteOfDay.quote}</h5>
+          <p className="card-text">Author: {quoteOfDay.author}</p>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 ```
 
-## Revisit  -> Quotes page & Author page
+## Testing the Application
 
-### Add the form to search for quote based on Author
+1. Run the application:
 
-Add a form to the QuotesPage to implement the search by Author functionality
-
-``` typescript
-   <form className="row m-3">
-        <div className="input-group">
-          <span className="input-group-text" id="basic-addon1">
-            Search by Author
-          </span>
-          <input type="text" className="form-control" placeholder="Author Name" />
-          <button type="submit" className="btn btn-primary">
-            Search
-          </button>
-        </div>
-      </form>
+```bash
+pnpm run dev
 ```
 
-### Add link from Author to Quotes Page
+1. Test the following functionality:
+   - Navigation between pages
+   - Author links leading to quotes page
+   - Quote of the day display
+   - Search form interaction
+   - Responsive layout on different screen sizes
 
-Modify the code in the Author page to include a hyperlink to take the user to the Quotes page on clicking on the Author
-For this we need to use the **Link** element from `react-router-dom`
-Modify the code to look as shown below
+1. Check browser console for any errors or warnings
 
-``` typescript
-authors.map(author=>(<p>
-              <Link to='/quote'>{author}</Link>
-              </p>))
-```
+## What's Next
 
-## Testing the application
+In quotes-104, we'll:
 
-- Run the application using `pnpm run dev`
-- Open the application in the browser using `http://localhost:3000`
-- Test the application by clicking on the links to navigate to the different pages
-- On the browser console check for any errors
-- On the browser console, check the network calls to ensure that the application is working as expected
+- Add state management for the search functionality
+- Implement filtering quotes by author
+- Add error handling and loading states
+- Enhance the user experience with feedback messages
 
-```diff
-- Fix the issues in the code to ensure no errors are shown in the browser console
-```
+This will make our application fully interactive and user-friendly.
 
 ---
 
-[<< Previous](/tutorial-reactjs/quotes-102) | [Index](/tutorial-reactjs/) | [Next >>](../tutorial-reactjs/quotes-104)
+[<< Previous](/tutorial-reactjs/quotes-102) | [Index](/tutorial-reactjs/) | [Next >>](/tutorial-reactjs/quotes-104)
