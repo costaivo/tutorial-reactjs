@@ -31,7 +31,6 @@ export default function AuthorPage() {
     "Ivo Costa",
     "Jakob",
     "John Lennon",
-    "Ivo Costa",
     "Lao-Tze",
     "Larry Niven",
     "Linnie",
