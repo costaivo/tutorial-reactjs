@@ -114,6 +114,34 @@ export default function QuotesPage() {
   
   const authorParam = searchParams.get('author') || '';
 
+  // Add initial quotes loading
+  useEffect(() => {
+    const loadQuotes = async () => {
+      setIsLoading(true);
+      try {
+        // This would typically be an API call
+        const initialQuotes: QuoteType[] = [
+          { _id: '1', text: 'Be yourself; everyone else is already taken.', author: 'Oscar Wilde' },
+          { _id: '2', text: 'Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.', author: 'Albert Einstein' },
+          { _id: '3', text: 'So many books, so little time.', author: 'Frank Zappa' },
+          { _id: '4', text: 'Be the change that you wish to see in the world.', author: 'Mahatma Gandhi' },
+        ];
+        setQuotes(initialQuotes);
+        
+        // If there's an initial author parameter, filter immediately
+        if (authorParam) {
+          handleSearch(authorParam);
+        }
+      } catch (err) {
+        setError('Failed to load quotes. Please try again.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadQuotes();
+  }, []); // Run once on component mount
+
   const handleSearch = async (searchAuthor: string) => {
     setError(null);
     setIsLoading(true);
@@ -140,13 +168,6 @@ export default function QuotesPage() {
       setIsLoading(false);
     }
   };
-
-  // Load initial quotes when author parameter exists
-  useEffect(() => {
-    if (authorParam) {
-      handleSearch(authorParam);
-    }
-  }, []);
 
   return (
     <div className="container mt-4">

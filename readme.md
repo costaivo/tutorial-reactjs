@@ -9,7 +9,7 @@
 - [Quotes-102 --Adding Navigation and Footer Components](https://costaivo.com/tutorial-reactjs/quotes-102)
 - [Quotes-103 -- Listing static data and Linking  pages](https://costaivo.com/tutorial-reactjs/quotes-103)
 - [Quotes-104 --  DRY Principle](https://costaivo.com/tutorial-reactjs/quotes-104)
-- [Quotes-104 --  Search and Filter](https://costaivo.com/tutorial-reactjs/quotes-105)
+- [Quotes-105 --  Search and Filter](https://costaivo.com/tutorial-reactjs/quotes-105)
 
 ## Part 2
 
