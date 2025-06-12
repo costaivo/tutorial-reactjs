@@ -1,0 +1,30 @@
+{
+  "editor": {
+    "formatOnSave": true,
+    "tabSize": 2,
+    "insertSpaces": true,
+    "wordWrap": "on",
+    "rulers": [80, 100],
+    "trimTrailingWhitespace": true,
+    "insertFinalNewline": true
+  },
+  "files": {
+    "exclude": {
+      "**/.git": true,
+      "**/v1": true,
+      "**/v1/**": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true
+    },
+    "watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/v1/**": true
+    }
+  },
+  "markdown": {
+    "preview": {
+      "breaks": true,
+      "linkify": true
+    }
+  }
+} 

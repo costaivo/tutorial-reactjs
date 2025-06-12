@@ -1,0 +1,87 @@
+{
+  "fileAssociations": {
+    "*.md": "markdown",
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
+    "*.json": "json",
+    "*.yml": "yaml",
+    "*.yaml": "yaml"
+  },
+  "languageRules": {
+    "markdown": {
+      "formatting": {
+        "lineLength": 100,
+        "wrap": true,
+        "listIndentation": 2
+      },
+      "validation": {
+        "checkLinks": true,
+        "checkImages": true,
+        "checkHeaders": true
+      }
+    }
+  },
+  "projectRules": {
+    "structure": {
+      "required": [
+        "readme.md",
+        "quotes-*.md"
+      ],
+      "optional": [
+        "assets/",
+        "_layouts/",
+        "v1/"
+      ],
+      "excluded": [
+        "node_modules/",
+        "dist/",
+        ".git/"
+      ]
+    }
+  },
+  "searchRules": {
+    "include": [
+      "*.md",
+      "*.js",
+      "*.jsx"
+    ],
+    "exclude": [
+      "v1/**",
+      "node_modules/**",
+      "dist/**"
+    ],
+    "prioritize": [
+      "readme.md",
+      "quotes-*.md"
+    ]
+  },
+  "editorRules": {
+    "markdown": {
+      "autoFormat": true,
+      "autoSave": true,
+      "wordWrap": true,
+      "rulers": [80, 100],
+      "trimTrailingWhitespace": true
+    }
+  },
+  "tutorialRules": {
+    "naming": {
+      "pattern": "quotes-XXX.md",
+      "sequence": ["100", "101", "102", "103", "104", "105"]
+    },
+    "structure": {
+      "requiredSections": [
+        "Introduction",
+        "Examples",
+        "Exercises",
+        "Summary"
+      ],
+      "codeBlocks": {
+        "language": "jsx",
+        "format": "fenced"
+      }
+    }
+  }
+} 
